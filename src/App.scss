@@ -1,0 +1,287 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+$color_main1: #7541AC;
+$color_main2: #6B30AC;
+$color_main3: #360A66;
+$color_seconda1: #BE3E84;
+$color_seconda2: #BE297B;
+$color_seconda3: #7A0646;
+$color_secondb1: #9FCF44;
+$color_secondb2: #97CF2D;
+$color_secondb3: #5F8D07;
+$color_additional1: #D9CF47;
+$color_additional2: #D9CD2F;
+$color_additional3: #978E07;
+
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+
+
+  .App_header {
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 7px;
+    margin-bottom: 10px;
+  }
+}
+
+.todododoSetter {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  width: 100%;
+
+  .todododoSetter_input {
+    text-align: center;
+    margin-bottom: none;
+    color: #fff;
+    font-size: 15px;
+    background-color: $color_main1;
+    height: 27px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $color_main3;
+    width: 50%;
+  }
+
+  .todododoSetter_input::placeholder {
+    color: #fff
+  }
+
+  .todododoSetter_button {
+    border-radius: 3px 3px 3px 0;
+    border: 1px solid $color_main3;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    outline: none;
+    background-color: $color_additional1;
+    color: $color_main3;
+  }
+
+  .todododoSetter_button:hover {
+    box-shadow: inset 0px 0px 5px 0px;
+  }
+
+  .todododoSetter_button:active {
+    background-color: $color_main1;
+    color: $color_additional1;
+    box-shadow: inset 0px 0px 7px 0px;
+  }
+}
+
+.todododoItem_delButton {
+  font-size: 15px;
+  color: $color_seconda3;
+  min-width: 30px;
+  min-height: 30px;
+  border: solid $color_seconda3;
+  background-color: $color_seconda2;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .todododoSetter {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.listContainer {
+  border-radius: 5px 5px 0 0;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 2fr 6fr 2fr;
+  flex-direction: column;
+  background-color: $color_main1;
+  width: 100%;
+  height: 100%;
+  min-width: 360px;
+
+  .listWrapper {
+    position: relative;
+    background-color: $color_main1;
+  }
+
+  img {
+    display: none;
+    align-self: flex-end;
+    animation-duration: 2.7s;
+    animation-iteration-count: 1;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    width: 200px;
+  }
+
+  .blind {
+    background-color: $color_main2;
+    height: 100%;
+    z-index: 2;
+  }
+
+
+  .shoked {
+    position: absolute;
+    top: 0;
+    left: -150px;
+    z-index: 1;
+  }
+  
+  .happysad {
+    position: absolute;
+    top: 0;
+    right: -150px;
+    z-index: 1;
+    animation-duration: 1.5s;
+  }
+
+  .animationLeft {
+    display: block;
+    animation-name: shoked;
+    animation-timing-function: linear;
+  }
+  
+  .animation {
+    display: block;
+    animation-name: happysad;
+    animation-timing-function: linear;
+  }
+
+  @keyframes shoked {
+    0% {
+      transform: rotate(0)
+    }
+
+    10% {
+      transform: rotate(45deg);
+    }
+
+    95% {
+      transform: rotate(45deg);
+    }
+
+    100% {
+      transform: rotate(0)
+    }
+  }
+  
+  @keyframes happysad {
+    0% {
+      transform: rotate(0)
+    }
+
+    10% {
+      transform: rotate(-45deg);
+    }
+
+    95% {
+      transform: rotate(-45deg);
+    }
+
+    100% {
+      transform: rotate(0)
+    }
+  }
+
+
+  .filterMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 40px;
+    gap: 1px;
+  }
+
+  .filterMenu_button {
+    width: 100%;
+    outline: none;
+    border-radius: none;
+    border: none;
+    background-color: $color_main3;
+    color: $color_main1;
+    font-size: large;
+  }
+
+  .active {
+    background-color: $color_main1;
+    color: $color_main3
+  }
+
+  .filterMenu_button:active {
+    background-color: $color_main1;
+    color: $color_main3;
+    box-shadow: inset 0px 0px 7px 0px;
+  }
+
+  .listItems {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 700px;
+    margin: auto;
+
+    .todododoItem {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin: 5px;
+
+      .todododoItem_content {
+        text-align: justify;
+        width: 100%;
+        padding: 5px 10px;
+        color: #fff;
+        border: solid $color_additional1;
+        border-width: 0 0 1px 0;
+      }
+
+      .todododoItem_button {
+        border-radius: 3px 3px 0 3px;
+        min-width: 110px;
+        height: 100%;
+        font-size: 15px;
+        outline: none;
+        border: none;
+        background-color: $color_additional1;
+        color: $color_main1;
+      }
+    }
+
+    .done {
+      .todododoItem_button {
+        background-color: $color_secondb2;
+      }
+
+      .todododoItem_content {
+        border-color: $color_secondb2;
+        text-decoration: line-through;
+        color: $color_secondb2
+      }
+    }
+
+  }
+
+
+}
