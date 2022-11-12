@@ -249,7 +249,7 @@ $color_additional3: #978E07;
       margin: 5px;
 
       .todododoItem_content {
-        text-align: justify;
+        text-align: left;
         width: 100%;
         padding: 5px 10px;
         color: #fff;
@@ -267,6 +267,16 @@ $color_additional3: #978E07;
         background-color: $color_additional1;
         color: $color_main1;
       }
+
+      .todododoItem_button:hover {
+        box-shadow: inset 0px 0px 5px 0px;
+      }
+    
+      .todododoItem_button:active {
+        background-color: $color_main2;
+        color: $color_secondb2;
+        box-shadow: inset 0px 0px 7px 0px;
+      }
     }
 
     .done {
@@ -279,9 +289,12 @@ $color_additional3: #978E07;
         text-decoration: line-through;
         color: $color_secondb2
       }
+
+      .todododoItem_button:active {
+        background-color: $color_main1;
+        color: $color_additional1;
+        box-shadow: inset 0px 0px 7px 0px;
+      }
     }
-
   }
-
-
 }

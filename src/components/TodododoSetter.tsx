@@ -13,11 +13,11 @@ export const TodododoSetter = () => {
             {() => {
                 return (
                     <div className='todododoSetter'>
-                        <input type="text" placeholder="To do do Type!" className='todododoSetter_input' value={value} onChange={(e) => setValue(e.target.value)} />
+                        <input type="text" placeholder="ToDoDoType!" className='todododoSetter_input' value={value} onChange={(e) => setValue(e.target.value)} />
                         <button className='todododoSetter_button'
                             onClick={() => {
                                 if (value !== "") {
-                                    todododoStore.addTodo(value)
+                                    todododoStore?.addTodo(value)
                                 }
                                 setValue("")
                             }}>ToDoDoAdd!</button>

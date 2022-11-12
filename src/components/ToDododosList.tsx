@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Observer } from "mobx-react-lite"
 import { useTodododoStore } from "../Context/toDododoContext";
 import { Todododo } from "./Todododo";
@@ -32,7 +32,7 @@ export const ToDododosList = () => {
                             <button className={`filterMenu_button ${(filter === 'Complite') && 'active'}`} onClick={() => setFilter('Complite')}>ToDoPerfomed!</button>
                         </div>
                         <div className="listItems">
-                            {todododoStore.todododosList.filter((e) => {
+                            {todododoStore?.todododosList.filter((e) => {
                                 switch (filter) {
                                     case 'All': return e
                                     case 'Complite': if (e.done) { return e }
@@ -47,9 +47,9 @@ export const ToDododosList = () => {
                                 )
                             })}
                         </div>
-                        <img className={`shoked ${todododoStore.animate === 'shoked' && 'animationLeft'}`} src={shoked} />
-                        <img className={`happysad ${todododoStore.animate === 'happy' && 'animation'}`} src={happy} />
-                        <img className={`happysad ${todododoStore.animate === 'sad' && 'animation'}`} src={sad} />
+                        <img alt="shoked Bethoven" className={`shoked ${todododoStore?.animate === 'shoked' && 'animationLeft'}`} src={shoked} />
+                        <img alt="happy Bethoven" className={`happysad ${todododoStore?.animate === 'happy' && 'animation'}`} src={happy} />
+                        <img alt="sad Bethoven" className={`happysad ${todododoStore?.animate === 'sad' && 'animation'}`} src={sad} />
                     </div>
                     <div className="blind"></div>
                 </div>

@@ -6,8 +6,6 @@ import { ToDododosList } from './components/ToDododosList';
 
 
 function App() {
-
-
   return (
     <Observer>
       {() => {
@@ -20,7 +18,7 @@ function App() {
         )
       }}
     </Observer>
-  );
+  )
 }
 
 export default App;

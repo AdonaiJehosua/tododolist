@@ -6,7 +6,7 @@ import { TodododoProvider } from "./Context/toDododoContext";
 
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <TodododoProvider>
